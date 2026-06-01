@@ -1,0 +1,33 @@
+{
+  "name": "May I Present: Bespoke Gifts",
+  "short_name": "May I Present",
+  "description": "Thoughtfully curated, bespoke gifts for every occasion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FEFAF5",
+  "theme_color": "#B87461",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/media/logo/Icon64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/media/logo/Icon256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/media/logo/Icon1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/media/logo/Icon256x256Trans.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

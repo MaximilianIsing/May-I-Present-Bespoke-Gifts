@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — May I Present</title>
+  <link rel="icon" type="image/png" href="/media/logo/Icon64x64Trans.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body>
+
+<!-- SVG Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="icon-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/>
+    <line x1="12" y1="22" x2="12" y2="7"/>
+    <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/>
+    <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+  </symbol>
+  <symbol id="icon-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+    <path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/>
+  </symbol>
+  <symbol id="icon-new" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </symbol>
+  <symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+  </symbol>
+  <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+    <polyline points="22 4 12 14.01 9 11.01"/>
+  </symbol>
+  <symbol id="icon-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23"/>
+    <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+  </symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+    <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+  </symbol>
+  <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+    <line x1="8" y1="18" x2="21" y2="18"/>
+    <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+    <line x1="3" y1="18" x2="3.01" y2="18"/>
+  </symbol>
+  <symbol id="icon-paperclip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
+  </symbol>
+  <symbol id="icon-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+    <line x1="1" y1="10" x2="23" y2="10"/>
+  </symbol>
+  <symbol id="icon-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"/>
+    <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+    <rect x="6" y="14" width="12" height="8"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </symbol>
+</svg>
+
+<!-- Login Screen -->
+<div id="admin-login" class="login-screen">
+  <div class="login-card">
+    <img src="/media/logo/Icon256x256Trans.png" alt="May I Present" class="login-logo" />
+    <h1 class="login-title">Michele's Dashboard</h1>
+    <p class="login-sub">Enter your password to continue</p>
+    <form id="login-form">
+      <input type="password" id="login-password" class="login-input"
+        placeholder="Password" autofocus autocomplete="current-password" />
+      <span id="login-error" class="login-error"></span>
+      <button type="submit" class="login-btn">Sign In →</button>
+    </form>
+    <a href="/" style="font-size:0.82rem;color:var(--text-light);margin-top:20px;display:block;text-align:center">← Back to site</a>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="admin-app" class="admin-app" style="display:none">
+
+  <!-- Mobile Top Bar -->
+  <div class="mobile-topbar" id="mobile-topbar">
+    <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <svg class="icon-md" aria-hidden="true"><use href="#icon-menu"/></svg>
+    </button>
+    <div class="mobile-brand">
+      <img src="/media/logo/Icon64x64Trans.png" alt="MIP" style="width:28px;height:28px" />
+      <span class="sidebar-name">May I Present</span>
+    </div>
+  </div>
+
+  <!-- Sidebar backdrop (mobile) -->
+  <div id="sidebar-backdrop" class="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <img src="/media/logo/Icon64x64Trans.png" alt="MIP" class="sidebar-logo" />
+      <div>
+        <div class="sidebar-name">May I Present</div>
+        <div class="sidebar-script">Michele's Dashboard</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="sidebar-btn active" id="nav-dashboard" onclick="showPanel('dashboard')">
+        <svg class="icon-sm" aria-hidden="true"><use href="#icon-grid"/></svg> Dashboard
+      </button>
+      <button class="sidebar-btn" id="nav-submissions" onclick="showPanel('submissions')">
+        <svg class="icon-sm" aria-hidden="true"><use href="#icon-gift"/></svg> Gift Requests
+        <span class="sb-badge" id="new-badge" style="display:none">0</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sidebar-signout" onclick="adminSignOut()">Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main" id="admin-main">
+
+    <!-- ── Dashboard Panel ── -->
+    <div id="panel-dashboard" class="panel active">
+      <div class="panel-header">
+        <div>
+          <h1 class="panel-title">Good to see you, Michele! ✦</h1>
+          <p class="panel-subtitle" id="dashboard-date"></p>
+        </div>
+        <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:linear-gradient(135deg,#FFE8D6,#FFDBB8);color:#B87461">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-inbox"/></svg>
+          </div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Requests</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:linear-gradient(135deg,#FFF3CD,#FFE083);color:#856404">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-new"/></svg>
+          </div>
+          <div class="stat-value" id="stat-new">—</div>
+          <div class="stat-label">New / Awaiting</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:linear-gradient(135deg,#D1ECF1,#A8DADC);color:#0C5460">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-activity"/></svg>
+          </div>
+          <div class="stat-value" id="stat-active">—</div>
+          <div class="stat-label">In Progress</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:linear-gradient(135deg,#D4EDDA,#9FD6A8);color:#155724">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-check-circle"/></svg>
+          </div>
+          <div class="stat-value" id="stat-completed">—</div>
+          <div class="stat-label">Completed</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="stat-icon" style="background:linear-gradient(135deg,#E2D9F3,#C8B8F0);color:#4A3780">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-dollar"/></svg>
+          </div>
+          <div class="stat-value" id="stat-revenue">—</div>
+          <div class="stat-label">Accepted Revenue</div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="section-block">
+        <h3 class="section-block-title">Recent Gift Requests</h3>
+        <div id="recent-list">
+          <div class="empty-state">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Submissions Panel ── -->
+    <div id="panel-submissions" class="panel">
+      <div class="panel-header">
+        <div>
+          <h1 class="panel-title">Gift Requests</h1>
+          <p class="panel-subtitle">Click a request to open the full profile and chat.</p>
+        </div>
+        <div class="filter-row">
+          <select id="status-filter" class="filter-select" onchange="filterSubmissions()">
+            <option value="">All Statuses</option>
+            <option value="new">New</option>
+            <option value="in_progress">In Progress</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="completed">Completed</option>
+          </select>
+          <input type="text" id="search-input" class="search-input"
+            placeholder="Search by name or occasion…" oninput="filterSubmissions()" />
+        </div>
+      </div>
+      <div id="submissions-list" class="submissions-list">
+        <div class="empty-state">Loading gift requests…</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Detail Drawer -->
+  <div id="detail-drawer" class="detail-drawer">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div>
+          <h2 class="drawer-title" id="drawer-title">Gift for —</h2>
+          <p class="drawer-sub" id="drawer-sub">—</p>
+        </div>
+        <button class="drawer-close" onclick="closeDrawer()">✕</button>
+      </div>
+
+      <div class="drawer-tabs">
+        <button class="drawer-tab active" id="dtab-info" onclick="switchDrawerTab('info')">📋 Summary</button>
+        <button class="drawer-tab" id="dtab-answers" onclick="switchDrawerTab('answers')">📝 Answers</button>
+        <button class="drawer-tab" id="dtab-chat" onclick="switchDrawerTab('chat')">
+          💬 Chat <span class="chat-unread-dot" id="chat-unread-dot" style="display:none"></span>
+        </button>
+      </div>
+
+      <!-- Info Tab -->
+      <div id="dtab-info-panel" class="drawer-tab-panel">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:12px">
+          <button class="print-summary-btn" onclick="printSummary()">
+            <svg class="icon-sm" aria-hidden="true" style="vertical-align:middle;margin-right:5px"><use href="#icon-print"/></svg>Print Summary
+          </button>
+        </div>
+        <div id="drawer-summary-content"></div>
+
+        <div class="info-section">
+          <label class="info-label">Status</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px" id="status-buttons"></div>
+        </div>
+
+        <div class="info-section">
+          <label class="info-label">Internal Notes</label>
+          <textarea id="admin-notes" class="admin-notes-input" placeholder="Private notes (only visible to you)…"></textarea>
+          <button class="save-notes-btn" onclick="saveNotes()">Save Notes</button>
+        </div>
+      </div>
+
+      <!-- Answers Tab -->
+      <div id="dtab-answers-panel" class="drawer-tab-panel" style="display:none">
+        <div id="drawer-answers-content"></div>
+      </div>
+
+      <!-- Chat Tab -->
+      <div id="dtab-chat-panel" class="drawer-tab-panel" style="display:none;flex-direction:column;height:100%">
+        <div class="admin-messages" id="admin-messages"></div>
+        <div id="admin-typing-indicator" class="typing-indicator">
+          <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+        </div>
+
+        <!-- Charge Prompt -->
+        <div class="charge-prompt-bar">
+          <button class="charge-trigger-btn" onclick="toggleChargePanelUI()">
+            <svg class="icon-sm" aria-hidden="true" style="vertical-align:middle;margin-right:4px"><use href="#icon-card"/></svg>Request Payment
+          </button>
+        </div>
+        <div id="charge-panel" class="charge-panel" style="display:none">
+          <div class="charge-panel-row">
+            <div>
+              <label class="info-label">Amount ($)</label>
+              <input type="number" id="charge-amount" class="charge-input" placeholder="0.00" min="1" step="0.01" />
+            </div>
+            <div style="flex:1">
+              <label class="info-label">Description</label>
+              <input type="text" id="charge-description" class="charge-input" placeholder="e.g., Custom jewelry curation fee" />
+            </div>
+          </div>
+          <button class="send-charge-btn" onclick="sendChargePrompt()">Send Payment Request →</button>
+        </div>
+
+        <div class="admin-chat-bar">
+          <button class="admin-file-btn" onclick="document.getElementById('admin-file-input').click()">
+            <svg class="icon-md" aria-hidden="true"><use href="#icon-paperclip"/></svg>
+          </button>
+          <input type="file" id="admin-file-input" style="display:none" accept="image/*,.pdf,.doc,.docx" onchange="adminUploadFile(event)" />
+          <textarea class="admin-chat-input" id="admin-chat-input"
+            placeholder="Message the client…" rows="1"
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();adminSendMessage()}"
+            oninput="adminTyping()"></textarea>
+          <button class="admin-send-btn" onclick="adminSendMessage()">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="drawer-backdrop" class="drawer-backdrop" onclick="closeDrawer()"></div>
+
+</div><!-- /admin-app -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

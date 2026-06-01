@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#B87461" />
+  <meta name="description" content="May I Present: Bespoke Gifts — Thoughtfully curated, personalized gifts for every occasion. Let Michele find the perfect gift for your loved one." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="May I Present" />
+  <title>May I Present: Bespoke Gifts</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/media/logo/Icon256x256Trans.png" />
+  <link rel="icon" type="image/png" href="/media/logo/Icon64x64Trans.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     SVG SPRITE — inline icon system
+═══════════════════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+  <!-- Gift with bow -->
+  <symbol id="icon-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 12 20 22 4 22 4 12"/>
+    <rect x="2" y="7" width="20" height="5"/>
+    <line x1="12" y1="22" x2="12" y2="7"/>
+    <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/>
+    <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+  </symbol>
+
+  <!-- Bell -->
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+    <path d="M13.73 21a2 2 0 01-3.46 0"/>
+  </symbol>
+
+  <!-- Birthday cake -->
+  <symbol id="icon-cake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-8a2 2 0 00-2-2H6a2 2 0 00-2 2v8"/>
+    <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/>
+    <line x1="2" y1="21" x2="22" y2="21"/>
+    <line x1="7" y1="8" x2="7" y2="11"/>
+    <line x1="12" y1="8" x2="12" y2="11"/>
+    <line x1="17" y1="8" x2="17" y2="11"/>
+  </symbol>
+
+  <!-- Wedding rings -->
+  <symbol id="icon-rings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="14" r="5"/>
+    <circle cx="15" cy="10" r="5"/>
+  </symbol>
+
+  <!-- Heart -->
+  <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+  </symbol>
+
+  <!-- Star -->
+  <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </symbol>
+
+  <!-- Graduation cap -->
+  <symbol id="icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </symbol>
+
+  <!-- Baby stroller -->
+  <symbol id="icon-baby" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 5a7 7 0 0014 0"/>
+    <path d="M17 5l2 8H5l2-8"/>
+    <circle cx="8.5" cy="18" r="1.5"/>
+    <circle cx="15.5" cy="18" r="1.5"/>
+    <line x1="10" y1="21" x2="14" y2="21"/>
+  </symbol>
+
+  <!-- House -->
+  <symbol id="icon-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </symbol>
+
+  <!-- Flower / bloom -->
+  <symbol id="icon-flower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="2.5"/>
+    <path d="M12 2a3 3 0 000 6M12 22a3 3 0 000-6M2 12a3 3 0 006 0M22 12a3 3 0 00-6 0"/>
+    <path d="M5.64 5.64a3 3 0 004.24 4.24M14.12 14.12a3 3 0 004.24 4.24M5.64 18.36a3 3 0 004.24-4.24M14.12 9.88a3 3 0 004.24-4.24"/>
+  </symbol>
+
+  <!-- Sunrise (retirement) -->
+  <symbol id="icon-sunrise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 18a5 5 0 00-10 0"/>
+    <line x1="12" y1="2" x2="12" y2="9"/>
+    <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/>
+    <line x1="1" y1="18" x2="3" y2="18"/>
+    <line x1="21" y1="18" x2="23" y2="18"/>
+    <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/>
+    <line x1="23" y1="22" x2="1" y2="22"/>
+    <polyline points="8 6 12 2 16 6"/>
+  </symbol>
+
+  <!-- Snowflake (holiday) -->
+  <symbol id="icon-snowflake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="2" x2="12" y2="22"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <polyline points="16 6 12 2 8 6"/>
+    <polyline points="16 18 12 22 8 18"/>
+    <polyline points="6 8 2 12 6 16"/>
+    <polyline points="18 8 22 12 18 16"/>
+  </symbol>
+
+  <!-- Sparkle / just because -->
+  <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z"/>
+    <path d="M18.5 5.5l.75 2.25L21.5 8.5l-2.25.75L18.5 11.5l-.75-2.25L15.5 8.5l2.25-.75z" stroke-width="1"/>
+  </symbol>
+
+  <!-- Paperclip (attach) -->
+  <symbol id="icon-paperclip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
+  </symbol>
+
+  <!-- Ribbon / bow accent -->
+  <symbol id="icon-ribbon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8c-2-3-6-3-6 0s6 3 6 6-6 3-6 0"/>
+    <path d="M12 8c2-3 6-3 6 0s-6 3-6 6 6 3 6 0"/>
+  </symbol>
+
+  <!-- Envelope / valentines -->
+  <symbol id="icon-envelope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22 6 12 13 2 6"/>
+  </symbol>
+
+</svg>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay" class="loading-overlay">
+  <img src="/media/logo/Icon256x256Trans.png" alt="May I Present" class="loading-logo" />
+
+  <div class="loading-text">May I Present…</div>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container" class="toast-container"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     LANDING VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="view-landing" class="view">
+
+  <!-- Hero -->
+  <section class="landing-hero">
+    <div class="hero-text">
+      <div class="hero-label anim-fade-up">
+        <svg class="icon-sm" aria-hidden="true"><use href="#icon-ribbon"/></svg>
+        Bespoke Gift Curation &middot; US Only
+      </div>
+      <h1 class="hero-title anim-fade-up delay-1">
+        May I Present<br />
+        <span class="hero-script">Bespoke Gifts</span>
+      </h1>
+      <p class="hero-tagline anim-fade-up delay-2">
+        I'm Michele, and I live for finding gifts that make people gasp, tear up, and say
+        <em>"how did you know?"</em> — let me do that for your someone special.
+      </p>
+      <div class="hero-actions anim-fade-up delay-3">
+        <button class="btn-primary" id="hero-cta">
+          Find the Perfect Gift &rarr;
+        </button>
+        <button class="btn-secondary" onclick="document.querySelector('.landing-story').scrollIntoView({behavior:'smooth'})">
+          Meet Michele ↓
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-photo-side anim-fade-in delay-4">
+      <div class="michele-photo-wrap">
+        <div class="michele-photo-bg"></div>
+        <div class="michele-photo">
+          <!-- Replace this div with Michele's actual <img> tag -->
+          <div class="michele-placeholder-icon">M</div>
+          <div class="michele-photo-label">Michele</div>
+          <div class="michele-photo-sub">Your Gift Curator</div>
+        </div>
+      </div>
+
+      <div class="michele-floating-badge badge-left anim-fade-up delay-5">
+        <span class="badge-icon"><svg class="icon-md" aria-hidden="true"><use href="#icon-star"/></svg></span>
+        <div class="badge-text">
+          <strong>Curated with love</strong>
+          <span>Every gift, handpicked</span>
+        </div>
+      </div>
+
+      <div class="michele-floating-badge badge-right anim-fade-up delay-6">
+        <span class="badge-icon"><svg class="icon-md" aria-hidden="true"><use href="#icon-heart"/></svg></span>
+        <div class="badge-text">
+          <strong>Personal touch</strong>
+          <span>1-on-1 with Michele</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Michele's Story -->
+  <section class="landing-story">
+    <div class="section-header">
+      <span class="section-eyebrow">My Story</span>
+      <h2 class="section-title">The Gift-Giver Who Couldn't Stop</h2>
+      <p class="section-sub">How a lifetime of perfectly chosen presents turned into a calling.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>
+          I always had more free time than my friends — and somehow, I always found myself spending
+          it searching for the perfect gift. Not a good gift. The gift. The one that makes someone
+          stop mid-unwrap and look at you like you really, truly <em>see</em> them.
+        </p>
+        <p>
+          Every birthday, every anniversary, every random Tuesday when someone needed to know
+          they were loved — I was there with something that felt impossibly right. Friends started
+          calling me before any occasion. "Michele, what do I get her?" "Michele, his birthday is
+          in three days."
+        </p>
+        <p>
+          So I turned it into a real service. Now I get to spend my days doing what I love most:
+          listening, learning about people, and finding that one thing that makes them feel
+          truly, deeply seen.
+        </p>
+      </div>
+      <div>
+        <blockquote class="story-quote">
+          "I always believed that the right gift can say everything your words can't.
+          That's what I do — I find the words in the form of something you can hold."
+          <br /><br />
+          <strong style="font-style:normal;font-size:0.9rem;color:var(--text-mid)">— Michele</strong>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="landing-how">
+    <div class="section-header">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">Three Simple Steps</h2>
+      <p class="section-sub">From "I have no idea" to "this is absolutely perfect."</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card anim-fade-up delay-1">
+        <div class="step-num-circle">01</div>
+        <div class="step-num">Step one</div>
+        <div class="step-title">Tell Me Everything</div>
+        <p class="step-desc">Fill out my thoughtful questionnaire — the more details you share, the more personal the gift.</p>
+      </div>
+      <div class="step-card anim-fade-up delay-2">
+        <div class="step-num-circle">02</div>
+        <div class="step-num">Step two</div>
+        <div class="step-title">We Chat</div>
+        <p class="step-desc">I reach out personally to refine the vision — no bots, just me, asking the right questions.</p>
+      </div>
+      <div class="step-card anim-fade-up delay-3">
+        <div class="step-num-circle">03</div>
+        <div class="step-num">Step three</div>
+        <div class="step-title">The Perfect Gift</div>
+        <p class="step-desc">We agree on something extraordinary, and I handle everything from there. Magic delivered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Occasions -->
+  <section class="landing-occasions">
+    <div class="section-header">
+      <span class="section-eyebrow">Every Occasion</span>
+      <h2 class="section-title">I Gift for Every Moment</h2>
+      <p class="section-sub">No occasion too big, no occasion too small — if it matters to them, it matters to me.</p>
+    </div>
+    <div class="occasions-grid">
+      <div class="occasion-chip" data-goto-signup>Birthdays</div>
+      <div class="occasion-chip" data-goto-signup>Weddings</div>
+      <div class="occasion-chip" data-goto-signup>Anniversaries</div>
+      <div class="occasion-chip" data-goto-signup>Sweet 16s</div>
+      <div class="occasion-chip" data-goto-signup>Baby Showers</div>
+      <div class="occasion-chip" data-goto-signup>Graduations</div>
+      <div class="occasion-chip" data-goto-signup>Retirements</div>
+      <div class="occasion-chip" data-goto-signup>Just Because</div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="landing-cta">
+    <h2>Ready to find the perfect gift?</h2>
+    <p>Join hundreds of people who've discovered that the right gift really does exist — it just takes the right eye to find it.</p>
+    <button class="btn-cta" id="footer-cta">Start Your Gift Journey →</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:micheleplaceholder@gmail.com">micheleplaceholder@gmail.com</a>
+      <a href="tel:+16462985348">+1 (646) 298-5348</a>
+    </div>
+    <div>&copy; 2025 May I Present: Bespoke Gifts &nbsp;·&nbsp; US Only &nbsp;·&nbsp; All Rights Reserved</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SIGN UP VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="view-signup" class="view">
+  <div class="signup-card anim-scale-in">
+    <img src="/media/logo/Icon256x256Trans.png" alt="May I Present" class="signup-logo" />
+
+    <h1 class="signup-title">Let's Get Started</h1>
+    <p class="signup-subtitle">Tell me a little about yourself so I can make this personal.</p>
+
+    <form id="signup-form" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="name-input">Your Name</label>
+        <input id="name-input" class="form-input" type="text" placeholder="First name" autocomplete="given-name" />
+        <span id="name-error" class="form-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">How should I reach you?</label>
+        <div class="contact-tabs">
+          <button type="button" class="contact-tab active" data-type="phone">Phone</button>
+          <button type="button" class="contact-tab" data-type="email">Email</button>
+        </div>
+        <input id="contact-input" class="form-input" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+        <span class="form-hint">US numbers preferred. No spam — ever.</span>
+        <span id="contact-error" class="form-error"></span>
+      </div>
+
+      <button type="submit" id="signup-submit-btn" class="signup-submit">
+        Let's Get Started →
+      </button>
+    </form>
+
+    <button id="signup-back" class="signup-back">← Back to home</button>
+
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:24px;line-height:1.6">
+      By continuing you agree to our
+      <a href="/terms.html" target="_blank">Terms of Service</a> and
+      <a href="/privacy.html" target="_blank">Privacy Policy</a>.
+      US customers only.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HOME VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="view-home" class="view">
+  <header class="home-header">
+    <div class="home-logo">
+      <img src="/media/logo/Icon64x64Trans.png" alt="May I Present" />
+      <div>
+        <div class="home-logo-text">May I Present</div>
+        <span class="home-logo-script">Bespoke Gifts</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="notif-btn" id="notif-btn" title="Notifications">
+        <svg class="icon-md" aria-hidden="true"><use href="#icon-bell"/></svg>
+        <span class="notif-badge" id="notif-badge">0</span>
+      </button>
+      <div class="user-avatar" id="user-avatar-btn" title="You">?</div>
+    </div>
+  </header>
+
+  <div class="home-content">
+    <div class="home-welcome anim-fade-up">
+      <div class="welcome-greeting">Welcome back</div>
+      <div class="welcome-name" id="welcome-name">Loading…</div>
+      <div class="welcome-sub">What wonderful occasion can I help with today?</div>
+    </div>
+
+    <button class="new-gift-btn anim-fade-up delay-1" id="new-gift-btn">
+      <svg class="icon-lg" aria-hidden="true"><use href="#icon-gift"/></svg>
+      Start a New Gift Request
+    </button>
+
+    <div class="gifts-section-title anim-fade-up delay-2">
+      My Gift Requests
+    </div>
+
+    <div class="gifts-search-wrap anim-fade-up delay-2">
+      <input type="text" id="gifts-search" class="gifts-search"
+        placeholder="Search by recipient, occasion, or status…" autocomplete="off" />
+    </div>
+
+    <div id="gifts-list">
+      <div class="gifts-empty">
+        <svg class="empty-gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg>
+        <p>Your gift requests will appear here.<br />Start one above &mdash; Michele is ready!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     QUESTIONNAIRE VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="view-questionnaire" class="view">
+  <header class="quiz-header">
+    <div class="quiz-header-top">
+      <button class="quiz-back-btn" id="quiz-back-btn" disabled>
+        ← Back
+      </button>
+      <span class="quiz-counter" id="quiz-counter">1 of 25–26</span>
+      <button class="quiz-exit" id="quiz-exit-btn">Exit</button>
+    </div>
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="quiz-progress-fill" style="width:4%"></div>
+    </div>
+    <div class="quiz-section-label" id="quiz-section-label">The Occasion</div>
+  </header>
+
+  <div class="quiz-body" id="quiz-body">
+    <!-- Questions rendered here by app.js -->
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     CHAT VIEW
+═══════════════════════════════════════════════════════ -->
+<div id="view-chat" class="view">
+  <header class="chat-header">
+    <button class="chat-back" id="chat-back-btn">←</button>
+    <div class="chat-header-avatar">✦</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name" id="chat-header-name">Michele</div>
+      <div class="chat-header-sub" id="chat-header-sub">Your gift curator</div>
+    </div>
+    <span class="chat-status-indicator status-badge status-new" id="chat-status-badge">New</span>
+  </header>
+
+  <div class="messages-list" id="messages-list">
+    <!-- Messages rendered here -->
+  </div>
+
+  <div id="typing-indicator" class="typing-indicator" style="margin:0 16px 8px">
+    <div class="typing-dot"></div>
+    <div class="typing-dot"></div>
+    <div class="typing-dot"></div>
+  </div>
+
+  <div class="chat-input-bar">
+    <button class="chat-file-btn" id="chat-file-btn" title="Attach file">
+      <svg class="icon-md" aria-hidden="true"><use href="#icon-paperclip"/></svg>
+    </button>
+    <input type="file" id="chat-file-input" style="display:none" accept="image/*,.pdf,.doc,.docx" />
+    <textarea class="chat-text-input" id="chat-text-input"
+      placeholder="Message Michele…" rows="1"></textarea>
+    <button class="chat-send-btn" id="chat-send-btn">➤</button>
+  </div>
+</div>
+
+<!-- Resume Draft Modal -->
+<div id="resume-modal" class="resume-modal-overlay" style="display:none" aria-modal="true" role="dialog">
+  <div class="resume-modal">
+    <div class="resume-modal-icon">
+      <svg style="width:36px;height:36px;color:var(--primary)" aria-hidden="true"><use href="#icon-gift"/></svg>
+    </div>
+    <h3>Continue Your Questionnaire?</h3>
+    <p>You have an unfinished gift request. Would you like to pick up where you left off?</p>
+    <div class="resume-modal-btns">
+      <button class="btn-primary" id="resume-yes-btn">Resume →</button>
+      <button class="btn-ghost" id="resume-no-btn">Start Fresh</button>
+    </div>
+  </div>
+</div>
+
+<!-- Socket.io + App Scripts -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/questions.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
