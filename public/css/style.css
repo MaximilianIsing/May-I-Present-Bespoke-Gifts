@@ -123,10 +123,14 @@ input, textarea, select {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #view-landing {
   background: var(--cream);
-  overflow-y: auto;
+  /* Make THIS element the scroll container — not the body */
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-/* Each section is a full-height slide — snap-type applied to <html> via JS */
+/* Each section snaps to fill the viewport */
 .landing-hero,
 .landing-story,
 .landing-how,
@@ -529,6 +533,7 @@ input, textarea, select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .landing-cta h2 {
@@ -562,18 +567,24 @@ input, textarea, select {
 }
 .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(0,0,0,0.25); }
 
-/* ── Footer ── */
+/* ── Footer (now inside .landing-cta slide) ── */
 .landing-footer {
-  background: var(--text);
-  color: rgba(255,255,255,0.6);
-  padding: 40px 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  padding: 20px 40px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   line-height: 1.8;
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
-.footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
-.footer-links a { color: rgba(255,255,255,0.7); transition: var(--trans); }
+.footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 8px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.65); transition: var(--trans); }
+.footer-links a:hover { color: rgba(255,255,255,1); text-decoration: none; }
 .footer-links a:hover { color: var(--white); text-decoration: none; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

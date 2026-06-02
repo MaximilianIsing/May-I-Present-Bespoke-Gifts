@@ -171,7 +171,7 @@
         <button class="btn-primary" id="hero-cta">
           Find the Perfect Gift &rarr;
         </button>
-        <button class="btn-secondary" onclick="document.querySelector('.landing-story').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-secondary" onclick="document.getElementById('view-landing').scrollTo({top:document.querySelector('.landing-story').offsetTop,behavior:'smooth'})">
           Meet Michele ↓
         </button>
       </div>
@@ -291,23 +291,23 @@
     </div>
   </section>
 
-  <!-- CTA Banner -->
+  <!-- CTA Banner + Footer (same slide) -->
   <section class="landing-cta">
     <h2>Ready to find the perfect gift?</h2>
     <p>Join hundreds of people who've discovered that the right gift really does exist — it just takes the right eye to find it.</p>
     <button class="btn-cta" id="footer-cta">Start Your Gift Journey →</button>
-  </section>
 
-  <!-- Footer -->
-  <footer class="landing-footer">
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
-      <a href="mailto:micheleplaceholder@gmail.com">micheleplaceholder@gmail.com</a>
-      <a href="tel:+16462985348">+1 (646) 298-5348</a>
-    </div>
-    <div>&copy; 2025 May I Present: Bespoke Gifts &nbsp;·&nbsp; US Only &nbsp;·&nbsp; All Rights Reserved</div>
-  </footer>
+    <!-- Footer pinned to bottom of this slide -->
+    <footer class="landing-footer">
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="mailto:micheleplaceholder@gmail.com">micheleplaceholder@gmail.com</a>
+        <a href="tel:+16462985348">+1 (646) 298-5348</a>
+      </div>
+      <div>&copy; 2026 May I Present: Bespoke Gifts &nbsp;·&nbsp; US Only &nbsp;·&nbsp; All Rights Reserved</div>
+    </footer>
+  </section>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════

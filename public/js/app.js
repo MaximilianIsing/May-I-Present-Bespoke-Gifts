@@ -55,9 +55,11 @@ function showView(name) {
   const el = document.getElementById(`view-${name}`);
   if (el) el.classList.add('active');
   window.scrollTo(0, 0);
-  // Scroll snap: enable on landing page (all screen sizes now that mobile is compact)
-  document.documentElement.style.scrollSnapType = name === 'landing' ? 'y mandatory' : '';
-  document.documentElement.style.scrollBehavior = name === 'landing' ? 'smooth' : '';
+  // Reset landing page scroll position when returning to it
+  if (name === 'landing') {
+    const lv = document.getElementById('view-landing');
+    if (lv) lv.scrollTop = 0;
+  }
   if (name === 'home') {
     renderHomeHeader();
     renderGiftList();
