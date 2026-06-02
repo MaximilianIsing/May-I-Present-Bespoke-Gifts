@@ -515,14 +515,27 @@ function loadQuestion(qId, direction = 'forward') {
     <h2 class="question-title">${title}</h2>
     <p class="question-subtitle">${q.subtitle || ''}</p>
     ${inputHTML}
-    <button class="quiz-next-btn ${isOptional && !hasValue ? 'skip' : ''}" id="quiz-next-btn"
-      onclick="quizNext()"
-      ${q.type === 'single_choice' ? 'style="display:none"' : ''}>
-      ${isOptional && !hasValue ? 'Skip for now' : nextBtnText}
-    </button>
   </div>`;
 
-  if (q.type === 'budget_slider') initBudgetSlider(saved.min, saved.max);
+  // Render next button into the sticky footer (not inside the scrollable body)
+  const footer = document.getElementById('quiz-footer');
+  if (footer) {
+    if (q.type === 'single_choice') {
+      footer.style.display = 'none';
+      footer.innerHTML = '';
+    } else {
+      const skipMode = isOptional && !hasValue;
+      footer.style.display = 'block';
+      footer.innerHTML = `<button class="quiz-next-btn ${skipMode ? 'skip' : ''}" id="quiz-next-btn" onclick="quizNext()">
+        ${skipMode ? 'Skip for now' : nextBtnText}
+      </button>`;
+    }
+  }
+
+  if (q.type === 'budget_slider') {
+    const bSaved = State.answers[q.field] || { min: 50, max: 200 };
+    initBudgetSlider(bSaved.min, bSaved.max);
+  }
   if (q.type === 'text_input') setTimeout(() => document.getElementById('quiz-text-input')?.focus(), 100);
 
   // Update back button
@@ -588,7 +601,6 @@ function toggleMultiChoice(field, value, btn) {
 
   const nextBtn = document.getElementById('quiz-next-btn');
   if (nextBtn) {
-    nextBtn.style.display = 'flex';
     nextBtn.textContent = arr.length ? 'Continue →' : 'Skip for now';
     nextBtn.className = `quiz-next-btn ${arr.length ? '' : 'skip'}`;
   }
