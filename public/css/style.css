@@ -583,7 +583,8 @@ input, textarea, select {
   right: 0;
   background: transparent;
   color: rgba(255,255,255,0.5);
-  padding: 20px 40px;
+  /* Push content above phone's bottom bar (home indicator, nav bar) */
+  padding: 20px 40px max(20px, env(safe-area-inset-bottom, 20px));
   text-align: center;
   font-size: 0.82rem;
   line-height: 1.8;
