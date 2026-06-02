@@ -123,14 +123,10 @@ input, textarea, select {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #view-landing {
   background: var(--cream);
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  min-height: unset; /* override .view min-height */
+  overflow-y: auto;
 }
 
-/* Each section is a full-height slide */
+/* Each section is a full-height slide — snap-type applied to <html> via JS */
 .landing-hero,
 .landing-story,
 .landing-how,
@@ -967,10 +963,12 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #view-questionnaire {
   background: var(--cream);
+}
+/* Only apply fixed-height layout when questionnaire is the active view */
+#view-questionnaire.active {
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  /* display:flex + flex-direction:column already come from .view.active */
 }
 
 .quiz-header {
@@ -1697,30 +1695,73 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
 @media (max-width: 900px) {
   .landing-hero { grid-template-columns: 1fr; padding: 48px 28px; gap: 0; }
   .hero-photo-side { display: none; }
-  .landing-story, .landing-how, .landing-occasions, .landing-cta, .landing-footer { padding: 56px 28px; }
-  .story-grid { grid-template-columns: 1fr; gap: 36px; }
-  .steps-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .landing-occasions, .landing-footer { padding: 56px 28px; }
   .occasions-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Disable snap on small screens — sections may be taller than the viewport */
+/* ── Mobile: compact sections to fit in 100vh so snap works ── */
 @media (max-width: 700px) {
-  #view-landing {
-    height: auto;
+
+  /* Story: hide long paragraphs, keep header + quote only */
+  .landing-story {
+    padding: 40px 28px;
     min-height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: none;
+    justify-content: center;
   }
-  .landing-hero,
-  .landing-story,
-  .landing-how,
-  .landing-occasions,
+  .landing-story .section-header { margin-bottom: 28px; }
+  .story-grid { grid-template-columns: 1fr; gap: 20px; }
+  .story-text { display: none; } /* too long for mobile slide */
+  .story-quote {
+    font-size: 1.1rem;
+    padding: 20px 24px;
+  }
+
+  /* How It Works: horizontal compact cards */
+  .landing-how {
+    padding: 40px 20px;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  .landing-how .section-header { margin-bottom: 24px; }
+  .landing-how .section-title { font-size: 1.6rem; }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+  .step-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 16px 18px;
+  }
+  .step-num-circle {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .step-num { display: none; }
+  .step-title { font-size: 0.95rem; margin-bottom: 4px; }
+  .step-desc { font-size: 0.82rem; }
+
+  /* Occasions: tighter */
+  .landing-occasions {
+    padding: 40px 20px;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  .landing-occasions .section-header { margin-bottom: 24px; }
+  .occasions-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .occasion-chip { padding: 12px 8px; font-size: 0.82rem; }
+
+  /* CTA */
   .landing-cta {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-    min-height: auto;
+    padding: 48px 28px;
+    min-height: 100vh;
   }
-  .landing-hero { min-height: 100vh; }
 }
 
 @media (max-width: 600px) {
