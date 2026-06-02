@@ -55,10 +55,15 @@ function showView(name) {
   const el = document.getElementById(`view-${name}`);
   if (el) el.classList.add('active');
   window.scrollTo(0, 0);
-  // Reset landing page scroll position when returning to it
+  // Landing page: lock body scroll so only #view-landing scrolls (mobile fix)
   if (name === 'landing') {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     const lv = document.getElementById('view-landing');
     if (lv) lv.scrollTop = 0;
+  } else {
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }
   if (name === 'home') {
     renderHomeHeader();

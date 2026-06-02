@@ -123,9 +123,12 @@ input, textarea, select {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #view-landing {
   background: var(--cream);
-  /* Make THIS element the scroll container — not the body */
+  /* Own scroll container — not the body */
   height: 100vh;
+  height: 100dvh; /* dynamic viewport — excludes mobile address bar */
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* smooth touch scroll on iOS */
+  overscroll-behavior: contain;      /* stop scroll leaking to body */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -142,6 +145,7 @@ input, textarea, select {
 
 .landing-hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -356,6 +360,7 @@ input, textarea, select {
   padding: 80px;
   background: var(--white);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -424,6 +429,7 @@ input, textarea, select {
   padding: 80px;
   background: var(--cream);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -490,6 +496,7 @@ input, textarea, select {
   padding: 80px;
   background: var(--white);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -529,6 +536,7 @@ input, textarea, select {
   text-align: center;
   color: var(--white);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1717,6 +1725,7 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
   .landing-story {
     padding: 40px 28px;
     min-height: 100vh;
+    min-height: 100dvh;
     justify-content: center;
   }
   .landing-story .section-header { margin-bottom: 28px; }
@@ -1731,6 +1740,7 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
   .landing-how {
     padding: 40px 20px;
     min-height: 100vh;
+    min-height: 100dvh;
     justify-content: center;
   }
   .landing-how .section-header { margin-bottom: 24px; }
@@ -1762,6 +1772,7 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
   .landing-occasions {
     padding: 40px 20px;
     min-height: 100vh;
+    min-height: 100dvh;
     justify-content: center;
   }
   .landing-occasions .section-header { margin-bottom: 24px; }
@@ -1772,6 +1783,7 @@ svg.empty-gift-icon { width: 48px; height: 48px; display: block; margin: 0 auto 
   .landing-cta {
     padding: 48px 28px;
     min-height: 100vh;
+    min-height: 100dvh;
   }
 }
 
